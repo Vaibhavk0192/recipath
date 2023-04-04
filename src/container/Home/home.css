@@ -1,0 +1,53 @@
+im .app__home {
+    display: flex;
+    padding: 2rem 4rem;
+}
+
+.title {
+    position: absolute;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    bottom: 0;
+    color: #F2CFA5;
+}
+
+.title .recipath {
+    color: aliceblue;
+    font-weight: bold;
+    max-width: auto;
+    font-size: 230px;
+    letter-spacing: -1.3rem;
+    position: relative;
+    font-family: 'KioskSans', sans-serif;
+
+}
+
+.title .cooking {
+    background-color: black;
+    font-family: 'KioskSans', sans-serif;
+    letter-spacing: -0.1rem;
+    font-size: 25px;
+    height: 3rem;
+    justify-items: center;
+    align-items: center;
+    color: #F2CFA5;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1;
+    position: absolute;
+    right: 55px;
+    top: 7px;
+    rotate: -5deg;
+}
+
+.app__home-heading_tagline{
+    font-family:'Ubuntu', sans-serif;
+    position: absolute;
+    font-weight: 600;
+    top: 240px;
+    padding-left: 1rem;
+    
+}
