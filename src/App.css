@@ -8,3 +8,20 @@
     position: relative;
 }
 
+.app__box {
+    position: absolute;
+    border-style: inset;
+    background: rgba(0, 0, 0, 0.7);
+    padding-left: 35px;
+    padding-bottom: 20px;
+    height: 70%;
+    width: 90%;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    border: 20px;
+    border-radius: 10px;
+ }
+

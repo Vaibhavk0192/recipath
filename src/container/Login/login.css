@@ -1,0 +1,132 @@
+.loggin_box {
+    position: relative;
+    left: auto;
+    z-index: 5;
+    width: 31rem;
+    height: 100vh;
+    display: flex;
+    margin-left: auto;
+    margin-right: 0;
+    background-color: #F3E8DA;
+    opacity: 1;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.app__login-formbox {
+    margin-top: 5rem;
+}
+
+.loggin_box .form-value {
+    margin-top: 10rem;
+    align-items: center;
+}
+
+h2 {
+    font-size: 60px;
+    color: black;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-value .unlock {
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    justify-content: center;
+    display: flex;
+    color: #696662;
+    margin-top: 1rem;
+}
+
+
+.app__login-inputbox {
+    margin-top: 2rem;
+    position: relative;
+    margin: 30px;
+    width: 310px;
+    border-bottom: 2px solid black;
+}
+
+.app__login-inputbox label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #696662;
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: .5s;
+    top: 3px;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -5px;
+}
+
+
+.app__login-inputbox input {
+
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: black;
+}
+
+.app__login-inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+
+
+.app__login-button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F2CFA5;
+    color: black;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 5px;
+    margin: 0 3rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+    margin-top: 4rem;
+    font-weight: bolder;
+
+}
+
+.btn-LOGIN:hover {
+    color: white;
+    transition: 0.4s;
+}
+
+.app__login-register {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.app__login-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #696662;
+}
+
+.app__login-text_link{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: black;
+}

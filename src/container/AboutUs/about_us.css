@@ -1,0 +1,27 @@
+
+
+.app__about-headtext {
+   align-items: center;
+   justify-content: center;
+   padding: 8rem 0 0rem 2rem;
+   color: #F2CFA5;
+   font-weight: bold;
+   font-size: 45px;
+   font-family: 'Ubuntu', sans-serif;
+
+}
+
+.app__about-content {
+   font-size: 15px;
+   color: aliceblue;
+   text-decoration: none;
+   padding: 2rem 1rem;
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   border-radius: 10px;
+   font-family: 'Ubuntu', sans-serif;
+   font-weight: bold;
+   padding-left: 2rem;
+
+}

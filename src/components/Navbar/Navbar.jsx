@@ -18,16 +18,17 @@ const Navbar = () => {
             <Link to="/aboutus">ABOUT</Link>
           </li>
           <li>
-            <Link to="/newletter">SUBSCRIBE</Link>
-          </li> 
+            <Link to="/Subscribe">SUBSCRIBE</Link>
+          </li>
         </ul>
         <div className="app__navbar-button">
-          <a href="/" class="btn-LOGIN">
+          <Link to="/login" className="btn-LOGIN">
             LOGIN
-          </a>
-          <a href="/" class="btn-SIGNUP">
+          </Link>
+
+          <Link to="/signup" className="btn-SIGNUP">
             SIGN UP
-          </a>
+          </Link>
         </div>
       </nav>
     </div>

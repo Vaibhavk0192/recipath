@@ -1,0 +1,69 @@
+.app__newsletter-heading {
+   margin-top: 10rem;
+   margin-left: 8rem;
+}
+
+.news_letters {
+   font-family: 'Ubuntu', sans-serif;
+   color: #F2CFA5;
+   font-weight: bold;
+   font-size: 60px;
+   
+}
+
+.Down_newsletters {
+   word-spacing: 2px;
+   font-family: 'Ubuntu', sans-serif;
+   font-weight: 600;
+   font-size: 18px;
+   color: aliceblue;
+   text-decoration: none;
+   /* border-radius: 10px; */
+}
+
+.inputbox {
+   display: flex;
+   justify-items: center;
+   align-items: center;
+   margin: 2.5rem 5rem 7rem 8rem;
+}
+
+.btn-SUBSCRIBE {
+   background-color: #F2CFA5;
+   color: black;
+   text-decoration: none;
+   border: 2px solid transparent;
+   font-weight: bold;
+   padding: 15px 30px;
+   border-radius: 15px;
+   font-family: 'Ubuntu', sans-serif;
+}
+
+.btn-SUBSCRIBE:hover {
+   /* color: white; */
+   transition: 0.3s;
+
+   background-color: transparent;
+   color: aliceblue;
+   text-decoration: none;
+   border: 2px solid transparent;
+   font-weight: bold;
+   padding: 15px 30px;
+   border-radius: 15px;
+   border-color: #F2CFA5;
+}
+
+input[type=email] {
+   border: 2px solid #F2CFA5;
+   font-family: 'Ubuntu', sans-serif;
+   font-size: 17px;
+   padding: 2rem;
+   /* border-color: #F2CFA5; */
+   border-radius: 10px;
+   background-color: black;
+   color: #F2CFA5;
+   width: 80%;
+   margin-right: 1.7rem;
+   padding-right: 2rem;
+   height: 70px;
+}

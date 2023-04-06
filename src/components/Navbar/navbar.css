@@ -6,12 +6,16 @@
 }
 
 nav {
+    width: 100%;
+    z-index: 1;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-top: 3.5rem;
     padding-left:10%;
     padding-right: 3%;
+
 }
 
 nav ul li {
