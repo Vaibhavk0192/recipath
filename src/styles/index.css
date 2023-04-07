@@ -5,11 +5,11 @@
 
 @font-face {
   font-family: 'KioskSans';
-  src: url("./fonts/kiosk-sans.otf") format("opentype");
+  src: url("../fonts/kiosk-sans.otf") format("opentype");
 }
 @font-face {
   font-family: 'KioskSans1';
-  src: url("./fonts/kiosk.otf") format("opentype");
+  src: url("../fonts/kiosk.otf") format("opentype");
 }
 
 /* font-family: 'Ubuntu', sans-serif; */

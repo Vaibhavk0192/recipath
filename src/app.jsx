@@ -4,7 +4,7 @@ import Home from "./container/Home/Home";
 import AboutUs from "./container/AboutUs/about_us";
 import Navbar from "./components/Navbar/Navbar";
 
-import "./app.css";
+import "./styles/App.css";
 import Subscribe from "./container/Subscribe/Subscribe";
 import Login from "./container/Login/Login";
 import Signup from "./container/SignUp/Signup";
