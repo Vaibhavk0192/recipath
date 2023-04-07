@@ -25,3 +25,44 @@
     border-radius: 10px;
  }
 
+ .design_box1 {
+    display: flex;
+    position: absolute;
+    background-color: #F2CFA5;
+    height: 15px;
+    margin-top: 10rem;
+    width: 150px;
+    margin-left: 5.5rem;
+    z-index: 5;
+ }
+ 
+ .design_box2 {
+    position: absolute;
+    z-index: 10;
+    background-color: #F2CFA5;
+    height: 150px;
+    margin-top: 10rem;
+    width: 15px;
+    margin-left: 5rem;
+ }
+ 
+ .design_box3 {
+    display: flex;
+    position: absolute;
+    background-color: #F2CFA5;
+    height: 15px;
+    margin-left: 92.58rem;
+    margin-top: 45.5rem;
+    width: 150px;
+    z-index: 5;
+ }
+ 
+ .design_box4 {
+    position: absolute;
+    z-index: 10;
+    background-color: #F2CFA5;
+    height: 150px;
+    margin-left: 101rem;
+    margin-top: 36.5rem;
+    width: 15px;
+ }
