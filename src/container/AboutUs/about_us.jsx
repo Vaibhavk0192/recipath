@@ -1,10 +1,12 @@
 import React from "react";
 import "./about_us.css";
-import '../../styles/App.css';
+import "../../styles/app.css";
 
 const about_us = () => {
   return (
     <div>
+      <div class="design_box1"></div>
+      <div class="design_box2"></div>
       <div class="app__box">
         <h1 class="app__about-headtext">ABOUT US</h1>
         <div class="app__about-content">
@@ -22,6 +24,8 @@ const about_us = () => {
           expedita minima?
         </div>
       </div>
+      <div class="design_box3"></div>
+      <div class="design_box4"></div>
     </div>
   );
 };

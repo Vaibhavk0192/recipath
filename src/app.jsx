@@ -8,7 +8,7 @@ import "./styles/App.css";
 import Subscribe from "./container/Subscribe/Subscribe";
 import Login from "./container/Login/Login";
 import Signup from "./container/SignUp/Signup";
-
+import Recipe from "./container/Recipe/recipe";
 
 const App = () => {
   return (
@@ -23,6 +23,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/Aboutus" element={<AboutUs />} />
               <Route path="/Subscribe" element={<Subscribe />} />
+              <Route path="/recipe" element={<Recipe />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
             </Routes>
