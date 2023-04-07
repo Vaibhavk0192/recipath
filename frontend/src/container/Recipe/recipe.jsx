@@ -2,7 +2,6 @@ import React from "react";
 import "./recipe.css";
 import Ingredient from "../../components/Navbar/ingredient";
 
-
 const Recipe = () => {
   return (
     <div>
@@ -12,7 +11,7 @@ const Recipe = () => {
         <div className="app__recipe-box">
           <h1 className="app__recipe-heading">Recipath</h1>
           <div className="app__recipe-ingredients">
-            <ul style={{display:"flex",}}>
+            <ul style={{ display: "flex" }}>
               <Ingredient title="wheat" />
               <Ingredient title="flour" />
               <Ingredient title="milk" />
@@ -25,10 +24,9 @@ const Recipe = () => {
             <label for="">enter ingredients</label>
           </div>
           <div className="app__recipe-ingredients">
-            <ul style={{display:"flex",}}>
+            <ul style={{ display: "flex" }}>
               <Ingredient title="ketchup" underline={true} />
-              <Ingredient title="chezze"underline={true} />
-        
+              <Ingredient title="chezze" underline={true} />
             </ul>
           </div>
           <div className="app__recipe-inputbox">
@@ -36,15 +34,15 @@ const Recipe = () => {
             <input type="Name" required></input>{" "}
             <label for="">enter ingredients you don't want</label>
           </div>
-            <div className="btn-boundary">
-              <a href="/" className="btn-Generate">
-                Generate
-              </a>
-            </div>
+          <div className="btn-boundary">
+            <a href="/" className="btn-Generate">
+              Generate
+            </a>
+          </div>
         </div>
       </div>
-          <div class="design_box3"></div>
-          <div class="design_box4"></div>
+      <div class="design_box3"></div>
+      <div class="design_box4"></div>
     </div>
   );
 };

@@ -26,5 +26,4 @@ const Subscribe = () => {
     </div>
   );
 };
-
 export default Subscribe;

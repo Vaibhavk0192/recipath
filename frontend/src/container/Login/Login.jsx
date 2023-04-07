@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <div class="loggin_box">
       <div class="form-value">
-        <form action="">
+        <form>
           <h2>Login</h2>
           <p class="unlock">Unlock the secrets of home-cooking !</p>
           <div className="app__login-formbox">

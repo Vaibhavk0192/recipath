@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <div class="loggin_box">
       <div class="form-value">
-        <form action="">
+        <form>
           <h2>Create account</h2>
           <p class="unlock">Unlock the secrets of home-cooking !</p>
           <div className="app__signup-formbox">
@@ -25,9 +25,9 @@ const Login = () => {
             </div>
           </div>
 
-          <a href="/" class="app__signup-button">
-            Create account
-          </a>
+          <button class="app__signup-button">
+            CREATE ACCOUNT
+          </button>
           <div className="app__signup-register">
             <p className="app__signup-text">
               Already have an account ?{" "}

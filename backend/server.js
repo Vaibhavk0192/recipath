@@ -1,18 +1,17 @@
-require('dotenv').config();
+require('dotenv').config({path:__dirname+'/./../.env'});
 const express=require("express");
 const bodyParser=require('body-parser');
 const mongoose=require('mongoose');
 const md5=require('md5');
-const passport=require('passport');
-const passportLocalMongoose=require('passport-local-mongoose');
-const googleStrategy=require('passport-google-oauth20').Strategy;
-const findOrCreate=require('mongoose-findorcreate');
+// const passport=require('passport');
+// const passportLocalMongoose=require('passport-local-mongoose');
+// const googleStrategy=require('passport-google-oauth20').Strategy;
+// const findOrCreate=require('mongoose-findorcreate');
+const path = __dirname + '/views/';
 
 const app=express();
 app.use(bodyParser.urlencoded({extended:true}));
-
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(express.static(path));
 
 mongoose.set('strictQuery',true);
 mongoose.connect(process.env.DATABASE_CONNECTION_URL);
@@ -24,14 +23,18 @@ const userSchema=new mongoose.Schema({
 
 const User=new mongoose.model('User',userSchema);
 
-app.post("/register",function(req,res){
+app.get("/",function(req,res){
+    res.sendFile(path+"index.html");
+})
+
+app.post("/signup",function(req,res){
     const newUser=new User({
         email:req.body.username,
         password:md5(req.body.password)
     });
     newUser.save(function(err){
         if(err) console.log(err);
-        else console.log("SEND TO PAGE!!") //TODO:Add send to next route functionality
+        else res.redirect("/recipe");
     });
 });
 
@@ -43,7 +46,7 @@ app.post("/login",function(req,res){
         if(err) console.log((err));
         else{
             if(foundUser){
-                if(foundUser.password===password) console.log("SEND TO PAGE!!") //TODO:Add send to next route functionality
+                if(foundUser.password===password) res.redirect("/recipe");
             }
         }
     });
@@ -53,4 +56,4 @@ app.post("/login",function(req,res){
 app.listen(3000,function(err){
     if(err) console.log(err);
     else console.log("Server started on port 3000");
-})
+});
