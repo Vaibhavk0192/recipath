@@ -21,7 +21,7 @@ const Recipe = () => {
           <div className="app__recipe-inputbox">
             <ion-icon name="mail-outline"></ion-icon>
             <input type="Name" required></input>{" "}
-            <label for="">enter ingredients</label>
+            <label for="">Enter ingredients you have available</label>
           </div>
           <div className="app__recipe-ingredients">
             <ul style={{ display: "flex" }}>
@@ -32,7 +32,7 @@ const Recipe = () => {
           <div className="app__recipe-inputbox">
             <ion-icon name="mail-outline"></ion-icon>
             <input type="Name" required></input>{" "}
-            <label for="">enter ingredients you don't want</label>
+            <label for="">Enter your allergies</label>
           </div>
           <div className="btn-boundary">
             <a href="/" className="btn-Generate">

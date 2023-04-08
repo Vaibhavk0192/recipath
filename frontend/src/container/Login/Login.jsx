@@ -5,19 +5,25 @@ import axios from "axios";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState('');
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
-    try {
-      const response = await axios.post('/login', { email, password });
-      console.log(response.data);
-      setError('');
-    } catch (err) {
-      console.error(err);
-      setError('Invalid username or password');
-    }
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    axios
+      .post("http://localhost:5000/api/login", {
+        email: event.target[0].value,
+        password: event.target[1].value,
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -25,7 +31,6 @@ const Login = () => {
       <div className="form-value">
         <form onSubmit={handleLogin}>
           <h2>Login</h2>
-          {error && <div>{error}</div>}
           <p className="unlock">Unlock the secrets of home-cooking !</p>
           <div className="app__login-formbox">
             <div className="app__login-inputbox">
@@ -33,7 +38,7 @@ const Login = () => {
               <input
                 type="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleEmailChange}
                 required
               />
               <label htmlFor="">Email</label>
@@ -43,7 +48,7 @@ const Login = () => {
               <input
                 type="password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handlePasswordChange}
                 required
               />
               <label htmlFor="">Password</label>

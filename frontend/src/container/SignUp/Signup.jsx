@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import "./signup.css";
 import axios from "axios";
 
@@ -6,8 +6,20 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios
+      .post("http://localhost:5000/api/signup", {
+        name: event.target[0].value,
+        email: event.target[1].value,
+        password: event.target[2].value,
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  };
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
@@ -18,23 +30,6 @@ const Register = () => {
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    axios
-      .post("/signup", {
-        name:name,
-        email: email,
-        password: password,
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error.response);
-        setErrorMessage(error.response.data.message);
-      });
   };
 
   return (
@@ -49,6 +44,7 @@ const Register = () => {
               <input
                 type="text"
                 required
+                value={name}
                 onChange={handleNameChange}
               />
               <label for="">Name</label>
@@ -58,6 +54,7 @@ const Register = () => {
               <input
                 type="email"
                 required
+                value={email}
                 onChange={handleEmailChange}
               />
               <label for="">Email</label>
@@ -67,16 +64,14 @@ const Register = () => {
               <input
                 type="password"
                 required
+                value={password}
                 onChange={handlePasswordChange}
               />
               <label for="">Password</label>
             </div>
           </div>
 
-          <input
-            type="submit"
-            class="app__signup-button"
-          />
+          <input type="submit" class="app__signup-button" />
           <div className="app__signup-register">
             <p className="app__signup-text">
               Already have an account ?{" "}
