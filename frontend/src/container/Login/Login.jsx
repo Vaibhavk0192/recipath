@@ -1,32 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
+import axios from "axios";
+
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState('');
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('/login', { email, password });
+      console.log(response.data);
+      setError('');
+    } catch (err) {
+      console.error(err);
+      setError('Invalid username or password');
+    }
+  };
+
   return (
-    <div class="loggin_box">
-      <div class="form-value">
-        <form>
+    <div className="loggin_box">
+      <div className="form-value">
+        <form onSubmit={handleLogin}>
           <h2>Login</h2>
-          <p class="unlock">Unlock the secrets of home-cooking !</p>
+          {error && <div>{error}</div>}
+          <p className="unlock">Unlock the secrets of home-cooking !</p>
           <div className="app__login-formbox">
-            <div class="app__login-inputbox">
+            <div className="app__login-inputbox">
               <ion-icon name="mail-outline"></ion-icon>
-              <input type="email" required />
-              <label for="">Email</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <label htmlFor="">Email</label>
             </div>
-            <div class="app__login-inputbox">
+            <div className="app__login-inputbox">
               <ion-icon ClassName="lock-closed-outline"></ion-icon>
-              <input type="password" required />
-              <label for="">Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <label htmlFor="">Password</label>
             </div>
           </div>
 
-          <a href="/" class="app__login-button">
+          <button type="submit" className="app__login-button">
             LOGIN
-          </a>
+          </button>
           <div className="app__login-register">
             <p className="app__login-text">
-              Don't have an account ?{" "}
-              <a href="/signup" class="app__login-text_link">
+              Don't have an account?{" "}
+              <a href="/signup" className="app__login-text_link">
                 Register
               </a>
             </p>
