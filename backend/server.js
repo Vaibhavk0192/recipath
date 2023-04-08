@@ -23,7 +23,7 @@ const userSchema=new mongoose.Schema({
 
 const User=new mongoose.model('User',userSchema);
 
-app.get("/",function(req,res){
+app.get("*",function(req,res){
     res.sendFile(path+"index.html");
 })
 
