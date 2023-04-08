@@ -33,13 +33,13 @@ const Register = () => {
   };
 
   return (
-    <div class="loggin_box">
-      <div class="form-value">
+    <div className="loggin_box">
+      <div className="form-value">
         <form onSubmit={handleSubmit}>
           <h2>Create account</h2>
-          <p class="unlock">Unlock the secrets of home-cooking !</p>
+          <p className="unlock">Unlock the secrets of home-cooking !</p>
           <div className="app__signup-formbox">
-            <div class="app__signup-inputbox">
+            <div className="app__signup-inputbox">
               <ion-icon name="mail-outline"></ion-icon>
               <input
                 type="text"
@@ -47,9 +47,9 @@ const Register = () => {
                 value={name}
                 onChange={handleNameChange}
               />
-              <label for="">Name</label>
+              <label>Name</label>
             </div>
-            <div class="app__signup-inputbox">
+            <div className="app__signup-inputbox">
               <ion-icon name="mail-outline"></ion-icon>
               <input
                 type="email"
@@ -57,9 +57,9 @@ const Register = () => {
                 value={email}
                 onChange={handleEmailChange}
               />
-              <label for="">Email</label>
+              <label>Email</label>
             </div>
-            <div class="app__signup-inputbox">
+            <div className="app__signup-inputbox">
               <ion-icon ClassName="lock-closed-outline"></ion-icon>
               <input
                 type="password"
@@ -67,15 +67,15 @@ const Register = () => {
                 value={password}
                 onChange={handlePasswordChange}
               />
-              <label for="">Password</label>
+              <label>Password</label>
             </div>
           </div>
 
-          <input type="submit" class="app__signup-button" />
+          <input type="submit" className="app__signup-button" />
           <div className="app__signup-register">
             <p className="app__signup-text">
               Already have an account ?{" "}
-              <a href="/login" class="app__signup-text_link">
+              <a href="/login" className="app__signup-text_link">
                 Login
               </a>
             </p>

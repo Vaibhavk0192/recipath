@@ -1,11 +1,11 @@
 require("dotenv").config({ path: __dirname + "/./../.env" });
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
 const md5 = require("md5");
 const cors = require("cors");
-
 const app = express();
+const mongoose = require("mongoose");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
@@ -53,14 +53,13 @@ app.post("/api/login", function (req, res) {
   const email = userdata.email;
   const password = md5(userdata.password);
 
-  User.findOne({ email: email }, function (err, foundUser) {
-    if (err) console.log(err);
-    else {
-      if (foundUser) {
-        if (md5(foundUser.password) === md5(password)) console.log("Found");
-      }
-    }
-  });
+  User.findOne({ email: email })
+    .then((foundUser) => {
+      console.log("found");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 app.listen(5000, function (err) {

@@ -16,6 +16,7 @@ const Login = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
+    console.log(event);
     axios
       .post("http://localhost:5000/api/login", {
         email: event.target[0].value,

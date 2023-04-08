@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div class="overlay">
+    <div className="overlay">
       {" "}
       <nav>
         <ul>
@@ -25,9 +25,11 @@ const Navbar = () => {
           <Link to="/login" className="btn-LOGIN">
             LOGIN
           </Link>
-
           <Link to="/signup" className="btn-SIGNUP">
             SIGN UP
+          </Link>
+          <Link to="/" className="btn-LOGIN" style={{ visibility: "hidden" }}>
+            SIGN OUT
           </Link>
         </div>
       </nav>
