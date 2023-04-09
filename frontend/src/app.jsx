@@ -12,6 +12,7 @@ import Signup from "./container/SignUp/Signup";
 import Recipe from "./container/Recipe/recipe";
 
 const App = () => {
+  const isLoggedIn = localStorage.getItem("user");
   return (
     <div className="app__bg ">
       <div className="app__bg-overlay">
@@ -25,12 +26,8 @@ const App = () => {
               <Route path="/Aboutus" element={<AboutUs />} />
               <Route path="/Subscribe" element={<Subscribe />} />
               <Route
-                path="/Recipe"
-                element={
-                  <Protected isLoggedIn={localStorage.getItem("user")}>
-                    <Recipe />
-                  </Protected>
-                }
+                path="/recipe"
+                element={isLoggedIn ? <Recipe /> : <Login />}
               />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
