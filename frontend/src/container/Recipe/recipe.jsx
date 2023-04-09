@@ -3,6 +3,12 @@ import "./recipe.css";
 import Ingredient from "../../components/Navbar/ingredient";
 
 const Recipe = () => {
+  const [ingredients, setIngredients] = React.useState([]);
+  const [allergies, setAllergies] = React.useState([]);
+
+  const clicked = (event) => {
+    console.log(event);
+  };
   return (
     <div>
       <div className="design_box1"></div>
@@ -12,10 +18,9 @@ const Recipe = () => {
           <h1 className="app__recipe-heading">Recipath</h1>
           <div className="app__recipe-ingredients">
             <ul style={{ display: "flex" }}>
-              <Ingredient title="wheat" />
-              <Ingredient title="flour" />
-              <Ingredient title="milk" />
-              <Ingredient title="rice" />
+              {ingredients.map((ingredient) => {
+                return <Ingredient title={ingredient} click={clicked} />;
+              })}
             </ul>
           </div>
           <div className="app__recipe-inputbox">
@@ -25,8 +30,9 @@ const Recipe = () => {
           </div>
           <div className="app__recipe-ingredients">
             <ul style={{ display: "flex" }}>
-              <Ingredient title="ketchup" underline={true} />
-              <Ingredient title="chezze" underline={true} />
+              {allergies.map((allergy) => {
+                return <Ingredient title={allergy} click={clicked} />;
+              })}
             </ul>
           </div>
           <div className="app__recipe-inputbox">

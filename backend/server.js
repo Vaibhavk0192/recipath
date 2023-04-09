@@ -40,7 +40,7 @@ app.post("/api/signup", function (req, res) {
   newUser
     .save()
     .then((newUser) => {
-      console.log(newUser.name);
+      res.json(newUser);
       res.status(200);
     })
     .catch((err) => {

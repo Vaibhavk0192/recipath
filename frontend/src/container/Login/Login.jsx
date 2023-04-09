@@ -22,6 +22,10 @@ const Login = () => {
         email: event.target[0].value,
         password: event.target[1].value,
       })
+      .then((response) => {
+        localStorage.setItem("user", response.data);
+        window.location.href = "/home";
+      })
       .catch((error) => {
         console.log(error);
       });

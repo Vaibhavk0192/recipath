@@ -22,15 +22,21 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="app__navbar-button">
-          <Link to="/login" className="btn-LOGIN">
-            LOGIN
-          </Link>
-          <Link to="/signup" className="btn-SIGNUP">
-            SIGN UP
-          </Link>
-          <Link to="/" className="btn-LOGIN" style={{ visibility: "hidden" }}>
-            SIGN OUT
-          </Link>
+          {!localStorage.getItem("user") && (
+            <Link to="/login" className="btn-LOGIN">
+              LOGIN
+            </Link>
+          )}
+          {!localStorage.getItem("user") && (
+            <Link to="/signup" className="btn-SIGNUP">
+              SIGN UP
+            </Link>
+          )}
+          {localStorage.getItem("user") && (
+            <Link to="/" className="btn-LOGIN">
+              SIGN OUT
+            </Link>
+          )}
         </div>
       </nav>
     </div>

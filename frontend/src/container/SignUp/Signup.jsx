@@ -16,6 +16,10 @@ const Register = () => {
         email: event.target[1].value,
         password: event.target[2].value,
       })
+      .then((response) => {
+        localStorage.setItem("user", response.data);
+        window.location.href = "/home";
+      })
       .catch((error) => {
         console.log(error.response);
       });
