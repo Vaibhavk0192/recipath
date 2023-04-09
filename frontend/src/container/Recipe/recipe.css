@@ -51,8 +51,8 @@
   transition: 0.5s;
 }
 
-input:focus~label,
-input:valid~label {
+input:focus ~ label,
+input:valid ~ label {
   top: -5px;
 }
 
@@ -91,7 +91,7 @@ input:valid~label {
 
 .btn-Generate:hover {
   transition: 0.4s;
-  
+
   background-color: transparent;
   color: aliceblue;
   text-decoration: none;
@@ -102,12 +102,10 @@ input:valid~label {
   border-color: #f2cfa5;
 }
 
-
 .app__recipe-add {
-  
   background-color: transparent;
   border-radius: 10px;
-  border-bottom-right-radius:0px;
+  border-bottom-right-radius: 0px;
   color: #f2cfa5;
   text-decoration: none;
   font-weight: bold;
@@ -120,11 +118,10 @@ input:valid~label {
   justify-self: end;
 }
 .app__recipe-add:hover {
-
   background-color: #f2cfa5;
   border-radius: 10px;
-  border-bottom-right-radius:0px;
-  border-bottom-left-radius:0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
   color: black;
   text-decoration: none;
   font-weight: bold;
@@ -141,7 +138,7 @@ input:valid~label {
   display: flex;
 }
 
-.app__recipe-adddiv{
+.app__recipe-adddiv {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
@@ -149,16 +146,13 @@ input:valid~label {
   margin-left: 1rem;
 }
 
-.app__recipe-note{
+.app__recipe-note {
   font-size: 0.8rem;
   color: #f2cfa5;
   font-family: "Ubuntu", sans-serif;
-  display: flexbox;
+  /* display: flexbox; */
   align-items: start;
   margin-top: 1.5rem;
   position: absolute;
-  left: 6rem
-
-
-  
+  left: 6rem;
 }

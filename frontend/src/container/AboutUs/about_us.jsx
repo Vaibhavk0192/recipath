@@ -5,11 +5,11 @@ import "../../styles/app.css";
 const about_us = () => {
   return (
     <div>
-      <div class="design_box1"></div>
-      <div class="design_box2"></div>
-      <div class="app__box">
-        <h1 class="app__about-headtext">ABOUT US</h1>
-        <div class="app__about-content">
+      <div className="design_box1"></div>
+      <div className="design_box2"></div>
+      <div className="app__box">
+        <h1 className="app__about-headtext">ABOUT US</h1>
+        <div className="app__about-content">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel unde,
           accusamus nulla reprehenderit tempore fugit neque enim? Voluptate
           doloremque ex sapiente ab accusantium tempore natus magnam voluptatem,
@@ -24,8 +24,8 @@ const about_us = () => {
           expedita minima?
         </div>
       </div>
-      <div class="design_box3"></div>
-      <div class="design_box4"></div>
+      <div className="design_box3"></div>
+      <div className="design_box4"></div>
     </div>
   );
 };

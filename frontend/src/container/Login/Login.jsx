@@ -1,38 +1,101 @@
-import React from "react";
+import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./login.css";
+import axios from "axios";
+
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    axios
+      .post("http://localhost:5000/api/login", {
+        email: event.target[0].value,
+        password: event.target[1].value,
+      })
+      .then((response) => {
+        localStorage.setItem("user", response.data);
+        toast.success("Logged in successfully !", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 3000);
+      })
+      .catch((error) => {
+        toast.error("Failed to log in !", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      });
+  };
+
   return (
-    <div class="loggin_box">
-      <div class="form-value">
-        <form>
+    <div className="loggin_box">
+      <div className="form-value">
+        <form onSubmit={handleLogin}>
           <h2>Login</h2>
-          <p class="unlock">Unlock the secrets of home-cooking !</p>
+          <p className="unlock">Unlock the secrets of home-cooking !</p>
           <div className="app__login-formbox">
-            <div class="app__login-inputbox">
+            <div className="app__login-inputbox">
               <ion-icon name="mail-outline"></ion-icon>
-              <input type="email" required />
-              <label for="">Email</label>
+              <input
+                type="email"
+                value={email}
+                onChange={handleEmailChange}
+                required
+              />
+              <label htmlFor="">Email</label>
             </div>
-            <div class="app__login-inputbox">
+            <div className="app__login-inputbox">
               <ion-icon ClassName="lock-closed-outline"></ion-icon>
-              <input type="password" required />
-              <label for="">Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={handlePasswordChange}
+                required
+              />
+              <label htmlFor="">Password</label>
             </div>
           </div>
 
-          <a href="/" class="app__login-button">
+          <button type="submit" className="app__login-button">
             LOGIN
-          </a>
+          </button>
           <div className="app__login-register">
             <p className="app__login-text">
-              Don't have an account ?{" "}
-              <a href="/signup" class="app__login-text_link">
+              Don't have an account?{" "}
+              <a href="/signup" className="app__login-text_link">
                 Register
               </a>
             </p>
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

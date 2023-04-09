@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div class="overlay">
+    <div className="overlay">
       {" "}
       <nav>
         <ul>
@@ -22,13 +22,28 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="app__navbar-button">
-          <Link to="/login" className="btn-LOGIN">
-            LOGIN
-          </Link>
-
-          <Link to="/signup" className="btn-SIGNUP">
-            SIGN UP
-          </Link>
+          {!localStorage.getItem("user") && (
+            <Link to="/login" className="btn-LOGIN">
+              LOGIN
+            </Link>
+          )}
+          {!localStorage.getItem("user") && (
+            <Link to="/signup" className="btn-SIGNUP">
+              SIGN UP
+            </Link>
+          )}
+          {localStorage.getItem("user") && (
+            <Link
+              to="/"
+              className="btn-LOGIN"
+              onClick={() => {
+                localStorage.setItem("user", "");
+                window.location.href = "/";
+              }}
+            >
+              SIGN OUT
+            </Link>
+          )}
         </div>
       </nav>
     </div>
