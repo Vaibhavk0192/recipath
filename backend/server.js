@@ -40,7 +40,7 @@ app.post("/api/signup", function (req, res) {
   newUser
     .save()
     .then((newUser) => {
-      res.json(newUser);
+      res.json({ email: newUser.email, password: newUser.password });
       res.status(200);
     })
     .catch((err) => {
@@ -55,7 +55,7 @@ app.post("/api/login", function (req, res) {
 
   User.findOne({ email: email })
     .then((foundUser) => {
-      console.log("found");
+      res.json({ email: foundUser.email, password: foundUser.password });
     })
     .catch((err) => {
       console.log(err);

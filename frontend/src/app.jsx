@@ -1,9 +1,8 @@
-import { React, useState } from "react";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./container/Home/Home";
 import AboutUs from "./container/AboutUs/about_us";
 import Navbar from "./components/Navbar/Navbar";
-import Protected from "./components/Navbar/Protected";
 
 import "./styles/app.css";
 import Subscribe from "./container/Subscribe/Subscribe";

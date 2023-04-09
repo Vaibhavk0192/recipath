@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./login.css";
 import axios from "axios";
 
@@ -16,7 +18,6 @@ const Login = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    console.log(event);
     axios
       .post("http://localhost:5000/api/login", {
         email: event.target[0].value,
@@ -24,10 +25,31 @@ const Login = () => {
       })
       .then((response) => {
         localStorage.setItem("user", response.data);
-        window.location.href = "/home";
+        toast.success("Logged in successfully !", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 3000);
       })
       .catch((error) => {
-        console.log(error);
+        toast.error("Failed to log in !", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       });
   };
 
@@ -73,6 +95,7 @@ const Login = () => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

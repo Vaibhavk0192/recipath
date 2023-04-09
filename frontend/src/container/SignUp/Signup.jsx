@@ -1,4 +1,6 @@
 import { React, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./signup.css";
 import axios from "axios";
 
@@ -18,10 +20,31 @@ const Register = () => {
       })
       .then((response) => {
         localStorage.setItem("user", response.data);
-        window.location.href = "/home";
+        toast.success("Registered successfully !", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 3000);
       })
       .catch((error) => {
-        console.log(error.response);
+        toast.error("Failed to register !", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       });
   };
   const handleNameChange = (event) => {
@@ -86,6 +109,7 @@ const Register = () => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

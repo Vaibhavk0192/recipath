@@ -33,7 +33,14 @@ const Navbar = () => {
             </Link>
           )}
           {localStorage.getItem("user") && (
-            <Link to="/" className="btn-LOGIN">
+            <Link
+              to="/"
+              className="btn-LOGIN"
+              onClick={() => {
+                localStorage.setItem("user", "");
+                window.location.href = "/";
+              }}
+            >
               SIGN OUT
             </Link>
           )}

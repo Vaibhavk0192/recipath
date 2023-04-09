@@ -8,8 +8,20 @@ const Recipe = () => {
   const [ingredients, setIngredients] = React.useState([]);
   const [allergies, setAllergies] = React.useState([]);
 
-  const clicked = (event) => {
-    console.log(event);
+  const removeIngredient = (id) => {
+    setIngredients((prevIngredients) => {
+      return prevIngredients.filter((item, index) => {
+        return index !== id;
+      });
+    });
+  };
+
+  const removeAllergy = (id) => {
+    setAllergies((prevAllergies) => {
+      return prevAllergies.filter((item, index) => {
+        return index !== id;
+      });
+    });
   };
 
   return (
@@ -21,8 +33,15 @@ const Recipe = () => {
           <h1 className="app__recipe-heading">Recipath</h1>
           <div className="app__recipe-ingredients">
             <ul style={{ display: "flex" }}>
-              {ingredients.map((ingredient) => {
-                return <Ingredient title={ingredient} click={clicked} />;
+              {ingredients.map((ingredient, index) => {
+                return (
+                  <Ingredient
+                    title={ingredient}
+                    click={removeIngredient}
+                    key={index}
+                    id={index}
+                  />
+                );
               })}
             </ul>
           </div>
@@ -35,7 +54,7 @@ const Recipe = () => {
                 value={ingredientItem}
                 onChange={(event) => setIngredientItem(event.target.value)}
               ></input>{" "}
-              <label for="">Enter ingredients</label>
+              <label>Enter ingredients you have available</label>
               <div className="app__recipe-adddiv">
                 <button
                   className="app__recipe-add"
@@ -51,8 +70,15 @@ const Recipe = () => {
           </div>
           <div className="app__recipe-ingredients">
             <ul style={{ display: "flex" }}>
-              {allergies.map((allergy) => {
-                return <Ingredient title={allergy} click={clicked} />;
+              {allergies.map((allergy, index) => {
+                return (
+                  <Ingredient
+                    title={allergy}
+                    click={removeAllergy}
+                    key={index}
+                    id={index}
+                  />
+                );
               })}
             </ul>
           </div>
@@ -66,7 +92,7 @@ const Recipe = () => {
                 setAllergyItem(event.target.value);
               }}
             ></input>{" "}
-            <label for="">Enter ingredients you don't want</label>
+            <label>Enter Allergies your body responds to</label>
             <div className="app__recipe-adddiv">
               <button
                 className="app__recipe-add"
