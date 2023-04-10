@@ -22,11 +22,11 @@ const Register = () => {
         localStorage.setItem("user", response.data);
         toast.success("Registered successfully !", {
           position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: false,
+          draggable: false,
           progress: undefined,
           theme: "light",
         });
@@ -37,11 +37,11 @@ const Register = () => {
       .catch((error) => {
         toast.error("Failed to register !", {
           position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: false,
+          draggable: false,
           progress: undefined,
           theme: "light",
         });

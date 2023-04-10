@@ -27,11 +27,11 @@ const Login = () => {
         localStorage.setItem("user", response.data);
         toast.success("Logged in successfully !", {
           position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: false,
+          draggable: false,
           progress: undefined,
           theme: "light",
         });
@@ -42,11 +42,11 @@ const Login = () => {
       .catch((error) => {
         toast.error("Failed to log in !", {
           position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: false,
+          draggable: false,
           progress: undefined,
           theme: "light",
         });
