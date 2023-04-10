@@ -111,7 +111,7 @@ const Recipe = () => {
             </a>
           </div>
           <div className="app__recipe-note">
-            *Don't enter any condiments or spices. we assume you have all spices
+            *Don't enter any condiments or spices. We assume you have all spices
             available at hand!
           </div>
         </div>
