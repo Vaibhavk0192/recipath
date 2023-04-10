@@ -1,6 +1,10 @@
 import React from "react";
+import axios from "axios";
 import "./recipe.css";
 import Ingredient from "../../components/Navbar/ingredient";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import generatedRecipe from "../Generated/generated";
 
 const Recipe = () => {
   const [ingredientItem, setIngredientItem] = React.useState("");
@@ -22,6 +26,56 @@ const Recipe = () => {
         return index !== id;
       });
     });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .post("http://localhost:5000/api/recipes", {
+        ingredients: ingredients,
+        allergies: allergies,
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          toast.success("Recipe found!", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+          });
+        } else {
+          toast.error("No recipe found!", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+        setTimeout(() => {
+          setAllergies([]);
+          setIngredients([]);
+        }, 1500);
+      })
+      .catch((err) => {
+        toast.error("Please try again later!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "light",
+        });
+      });
   };
 
   return (
@@ -106,9 +160,11 @@ const Recipe = () => {
             </div>
           </div>
           <div className="btn-boundary">
-            <a href="/" className="btn-Generate">
-              Generate
-            </a>
+            <form onSubmit={handleSubmit}>
+              <button className="btn-Generate" type="submit">
+                Generate
+              </button>
+            </form>
           </div>
           <div className="app__recipe-note">
             *Don't enter any condiments or spices. We assume you have all spices
@@ -118,6 +174,7 @@ const Recipe = () => {
       </div>
       <div className="design_box3"></div>
       <div className="design_box4"></div>
+      <ToastContainer />
     </div>
   );
 };
