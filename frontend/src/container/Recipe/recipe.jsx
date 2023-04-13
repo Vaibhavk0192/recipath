@@ -79,11 +79,9 @@ const Recipe = () => {
   };
 
   return (
-    <div>
+      <div className="app__box">
       <div className="design_box1"></div>
       <div className="design_box2"></div>
-      <div className="app__box">
-        <div className="app__recipe-box">
           <h1 className="app__recipe-heading">Recipath</h1>
           <div className="app__recipe-ingredients">
             <ul style={{ display: "flex" }}>
@@ -170,12 +168,10 @@ const Recipe = () => {
             *Don't enter any condiments or spices. We assume you have all spices
             available at hand!
           </div>
-        </div>
-      </div>
       <div className="design_box3"></div>
       <div className="design_box4"></div>
       <ToastContainer />
-    </div>
+      </div>
   );
 };
 

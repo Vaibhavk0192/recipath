@@ -9,18 +9,18 @@
 }
 
 .app__box {
-  position: absolute;
+  position: relative;
   border-style: inset;
   background: rgba(0, 0, 0, 0.7);
-  padding-left: 35px;
-  padding-bottom: 20px;
-  height: 70%;
+  /* padding-left: 35px; */
+  top: 5rem;
+  /* padding-top: 50px; */
   width: 90%;
   align-items: center;
   margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 10%;
-  margin-top: 10%;
+  /* margin-right: 5%; */
+  /* margin-bottom: 10%; */
+  /* margin-top: 10%; */
   border: 20px;
   border-radius: 10px;
 }
@@ -30,39 +30,45 @@
   position: absolute;
   background-color: #f2cfa5;
   height: 15px;
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
   width: 150px;
-  margin-left: 5.5rem;
+  /* margin-left: 5.5rem; */
   z-index: 5;
 }
 
 .design_box2 {
-  position: absolute;
+  display: flex;
+  position:absolute;
   z-index: 10;
   background-color: #f2cfa5;
   height: 150px;
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
   width: 15px;
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
 }
 
 .design_box3 {
+  bottom: 0;
+  right: 0;
   display: flex;
   position: absolute;
   background-color: #f2cfa5;
   height: 15px;
-  margin-left: 92.58rem;
-  margin-top: 45.5rem;
+  /* margin-left: 92.58rem; */
+  /* margin-top: 45.5rem; */
   width: 150px;
   z-index: 5;
 }
 
 .design_box4 {
+  bottom: 0;
+  right: 0;
   position: absolute;
+  display: flex;
   z-index: 10;
   background-color: #f2cfa5;
   height: 150px;
-  margin-left: 101rem;
-  margin-top: 36.5rem;
+  /* right: 10px; */
+  /* top: 20px; */
   width: 15px;
 }

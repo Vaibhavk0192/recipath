@@ -1,23 +1,44 @@
-.loggin_box {
-    position: relative;
-    left: auto;
+.app__login-loggin_box-a {
+    transition: .8s ease-in-out;
+    position: absolute;
+    right: 0;
+    top: 0;
     z-index: 5;
     width: 31rem;
     height: 100vh;
     display: flex;
-    margin-left: auto;
-    margin-right: 0;
+    margin-right: 0rem;
     background-color: #F3E8DA;
     opacity: 1;
     justify-content: center;
     border-radius: 5px;
+    animation-name:slide;
+    animation-duration: 0.3s;
+    overflow: hidden;
 }
+
+:root::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;
+    display: none;
+  }
+    @keyframes slide {
+        from{
+            margin-right:-30rem;
+        }
+        to{
+            
+            margin-right:0rem;
+        }
+    }
+
+
 
 .app__login-formbox {
     margin-top: 5rem;
 }
 
-.loggin_box .form-value {
+.form-value {
     margin-top: 10rem;
     align-items: center;
 }
@@ -96,13 +117,15 @@ input:valid~label {
     text-decoration: none;
     border: 2px solid transparent;
     font-weight: bold;
-    padding: 10px 5px;
-    margin: 0 3rem;
+    padding: 10px 80px;
+    position: relative;
+    left:5rem;
     display: flex;
     justify-content: center;
     border-radius: 30px;
     margin-top: 4rem;
     font-weight: bolder;
+    box-shadow: 0px 2px gray;
 
 }
 

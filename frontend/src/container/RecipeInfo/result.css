@@ -1,0 +1,23 @@
+.app__result-heading {
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0rem 0rem 5rem;
+    color: #F2CFA5;
+    font-weight: bold;
+    font-size: 43px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.app__result-recipe{
+    font-size: 14px;
+    color: aliceblue;
+    text-decoration: none;
+    padding:2rem 3rem 4rem 3rem;
+    margin-left: 2rem;
+    display: flex;
+    /* justify-content: flex-start; */
+    /* align-items: flex-start; */
+    border-radius: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}

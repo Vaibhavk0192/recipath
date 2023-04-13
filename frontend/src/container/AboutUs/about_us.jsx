@@ -5,9 +5,9 @@ import "../../styles/app.css";
 const about_us = () => {
   return (
     <div>
-      <div className="design_box1"></div>
-      <div className="design_box2"></div>
       <div className="app__box">
+        <div className="design_box1"></div>
+        <div className="design_box2"></div>
         <h1 className="app__about-headtext">ABOUT US</h1>
         <div className="app__about-content">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel unde,
@@ -23,9 +23,9 @@ const about_us = () => {
           ipsa! Blanditiis sequi nulla itaque reprehenderit! Dolore in rem
           expedita minima?
         </div>
+        <div className="design_box3"></div>
+        <div className="design_box4"></div>
       </div>
-      <div className="design_box3"></div>
-      <div className="design_box4"></div>
     </div>
   );
 };

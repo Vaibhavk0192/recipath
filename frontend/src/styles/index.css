@@ -12,6 +12,12 @@
   src: url("../fonts/kiosk.otf") format("opentype");
 }
 
+:root::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;
+  display: none;
+}
+
 /* font-family: 'Ubuntu', sans-serif; */
 
 :root {

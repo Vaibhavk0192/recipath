@@ -9,6 +9,7 @@ import Subscribe from "./container/Subscribe/Subscribe";
 import Login from "./container/Login/Login";
 import Signup from "./container/SignUp/Signup";
 import Recipe from "./container/Recipe/recipe";
+import Result from "./container/RecipeInfo/result";
 
 const App = () => {
   const isLoggedIn = localStorage.getItem("user");
@@ -24,6 +25,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/Aboutus" element={<AboutUs />} />
               <Route path="/Subscribe" element={<Subscribe />} />
+              <Route path="/Result" element={<Result />} />
               <Route
                 path="/recipe"
                 element={isLoggedIn ? <Recipe /> : <Login />}
