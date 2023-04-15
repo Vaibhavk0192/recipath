@@ -20,38 +20,25 @@ const Recipe = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    toast.success("Submitted! Please wait for recipe to be generated", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+    });
     axios
-      .post("http://localhost:4000/api/recipes", {
+      .post("http://localhost:4000/api/recipe", {
         ingredients: ingredients,
       })
       .then((response) => {
-        if (response.status === 200) {
-          toast.success("Recipe found!", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: true,
-            closeOnClick: false,
-            pauseOnHover: false,
-            draggable: false,
-            progress: undefined,
-            theme: "light",
-          });
-          console.log(response);
-        } else {
-          toast.error("No recipe found!", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: true,
-            closeOnClick: false,
-            pauseOnHover: false,
-            draggable: false,
-            progress: undefined,
-            theme: "light",
-          });
-        }
         setTimeout(() => {
           setIngredients([]);
         }, 1500);
+        console.log(response.data);
       })
       .catch((err) => {
         toast.error("Please try again later!", {
@@ -64,6 +51,7 @@ const Recipe = () => {
           progress: undefined,
           theme: "light",
         });
+        console.log(err);
       });
   };
 
