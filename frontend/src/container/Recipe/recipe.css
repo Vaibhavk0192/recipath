@@ -1,25 +1,29 @@
 .app__recipe-box {
+
   position: absolute;
   padding: 3rem;
 }
 
+
 .app__recipe-heading {
+  padding-top: 4rem;
+  padding-left: 6rem;
   color: #f2cfa5;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 60px;
   font-family: "Ubuntu", sans-serif;
 }
 
 .app__recipe-ingredients {
+  padding-left: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 28px;
+  margin-top: 5rem;
 }
 
 .app__recipe-button {
   font-family: "Ubuntu", sans-serif;
-  margin-right: 0.5rem;
   background-color: #f2cfa5;
   color: black;
   text-decoration: none;
@@ -31,9 +35,10 @@
 }
 
 .app__recipe-inputbox {
-  margin-top: 4rem;
+
+  margin-top: 2rem;
   position: relative;
-  margin: 3rem 0 0 0;
+  margin: 3rem 0 1rem 6rem;
   width: 520px;
   border-bottom: 2px solid #f2cfa5;
   display: flex;
@@ -75,8 +80,9 @@ input:valid ~ label {
 }
 
 .btn-boundary {
-  margin-top: 3rem;
-  margin-left: 10rem;
+  margin-top: 2rem;
+  margin-left: 6rem;
+  margin-bottom: 2rem;
 }
 
 .btn-Generate {
@@ -88,6 +94,9 @@ input:valid ~ label {
   padding: 11px 40px;
   border-radius: 10px;
   font-family: "Ubuntu", sans-serif;
+  margin-bottom: 2rem;
+  display: flex;
+
 }
 
 .btn-Generate:hover {
@@ -148,12 +157,14 @@ input:valid ~ label {
 }
 
 .app__recipe-note {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #f2cfa5;
   font-family: "Ubuntu", sans-serif;
   /* display: flexbox; */
   align-items: start;
-  margin-top: 1.5rem;
-  position: absolute;
-  left: 6rem;
+  padding-bottom: 1.5rem;
+  /* position: absolute; */
+margin-left: 6rem;
+margin-top: 4rem;
+
 }
