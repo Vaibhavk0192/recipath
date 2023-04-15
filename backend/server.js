@@ -90,12 +90,6 @@ app.post("/api/subscribe", function (req, res) {
   });
 });
 
-app.post("/api/recipes", (req, res) => {
-  const ingredients = req.body.ingredients;
-  const allergies = req.body.allergies;
-  res.sendStatus();
-});
-
 app.listen(5000, function (err) {
   if (err) console.log(err);
   else console.log("Server started on port 5000");
