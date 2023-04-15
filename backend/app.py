@@ -277,37 +277,27 @@ def generate_combinations(model, ingredients_list):
             ingredients = ingredients.split('\n')
             ingredients.extend(original_ingredients)
             ingredients = list(set(ingredients))
-            ingredients = '\n'.join([ingredient for ingredient in ingredients])
-
-            ans[0].append({'author': title[2:], 'title': ingredients, 'content': recipe,
-                          'date_posted': image_urls[idx], 'isFavorite': "false", 'classname': "heart"})
+            ans[0].append({'RecipeTitle': title[2:],
+                          'Ingredients': ingredients, 'Steps': recipe.split("\n"), })
 
             if image_select == True:
                 idx += 1
             else:
                 idx -= 1
 
-    print(ans)
-    if image_select:
-        image_select = False
-    else:
-        image_select = True
-
     return ans
 
 
 @app.route('/api/recipe', methods=["POST"])
 def home():
-    response = make_response('', 200)
     print("Running Ingredients-to-Recipe Function...")
 
     ingredients_l = request.json
-    ingredients_list = [ingredients_l]
+    ingredients_list = ingredients_l['ingredients']
     print(ingredients_list)
 
     ans = generate_combinations(model_simplified, ingredients_list)
-    response.set_data(jsonify(ans))
-    return response
+    return make_response(jsonify(ans[0][0]))
 
 
 app.run(port=4000)
