@@ -21,7 +21,7 @@ const Recipe = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:4000/api/recipes", {
+      .post("http://localhost:4000/api/recipe", {
         ingredients: ingredients,
       })
       .then((response) => {
@@ -64,6 +64,7 @@ const Recipe = () => {
           progress: undefined,
           theme: "light",
         });
+        console.log(err);
       });
   };
 

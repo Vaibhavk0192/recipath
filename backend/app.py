@@ -1,6 +1,7 @@
 import json
 import tensorflow as tf
 from flask import Flask, request, jsonify, make_response
+from flask_cors import CORS
 import numpy as np
 import os
 
@@ -18,7 +19,7 @@ def load_dataset(silent=False):
     dataset = []
 
     for dataset_file_name in dataset_file_names:
-        dataset_file_path = f'./model/tmp/datasets/{dataset_file_name}'
+        dataset_file_path = f'../model/tmp/datasets/{dataset_file_name}'
 
         with open(dataset_file_path) as dataset_file:
             json_data_dict = json.load(dataset_file)
@@ -134,7 +135,7 @@ def build_model(vocab_size, embedding_dim, rnn_units, batch_size):
 
 # Loading model into the architecture
 simplified_batch_size = 1
-filepath_of_trained_model = "backend\Model\Model.h5"
+filepath_of_trained_model = "Model\Model.h5"
 VOCABULARY_SIZE = 176
 model_simplified = build_model(
     VOCABULARY_SIZE, 256, 1024, simplified_batch_size)
@@ -162,23 +163,18 @@ tokenizer.get_config()
 # Generating Output
 def generate_text(model, start_string, num_generate=1000, temperature=1.0):
     # Evaluation step (generating text using the learned model)
-
     padded_start_string = STOP_WORD_TITLE + start_string
-
     # Converting our start string to numbers (vectorizing).
     input_indices = np.array(
         tokenizer.texts_to_sequences([padded_start_string]))
-
     # Empty string to store our results.
     text_generated = []
-
     # Here batch size == 1.
     model.reset_states()
     for char_index in range(num_generate):
         predictions = model(input_indices)
         # remove the batch dimension
         predictions = tf.squeeze(predictions, 0)
-
         # Using a categorical distribution to predict the character returned by the model.
         predictions = predictions / temperature
         predicted_id = tf.random.categorical(
@@ -198,6 +194,7 @@ def generate_text(model, start_string, num_generate=1000, temperature=1.0):
 
 
 app = Flask(__name__)
+CORS(app)
 print("Server Started!!")
 
 image_select = True
@@ -274,11 +271,11 @@ def generate_combinations(model, ingredients_list):
             recipe.strip()
 
             # Ingredients Duplicate Removal
-            oringinal_ingredients = ingredients_list[0].split()
-            oringinal_ingredients = [("• " + ingredient + "\n")
-                                     for ingredient in oringinal_ingredients]
+            original_ingredients = ingredients_list[0].split()
+            original_ingredients = [("• " + ingredient + "\n")
+                                    for ingredient in original_ingredients]
             ingredients = ingredients.split('\n')
-            ingredients.extend(oringinal_ingredients)
+            ingredients.extend(original_ingredients)
             ingredients = list(set(ingredients))
             ingredients = '\n'.join([ingredient for ingredient in ingredients])
 
