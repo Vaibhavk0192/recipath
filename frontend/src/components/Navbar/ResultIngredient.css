@@ -1,0 +1,15 @@
+.app__ringredient-button{
+    background-color:#f2cfa5;
+    display: flex;
+    /* position: absolute; */
+    padding: 5px;
+    border-radius: 5px;
+    border: transparent 2px;
+    font-size: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 550;
+    margin: 4px;
+    /* height:4rem;
+    width: 12rem; */
+
+}

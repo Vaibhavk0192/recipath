@@ -1,13 +1,38 @@
 import React from "react";
 import "./result.css";
+import Resultingredient from "../../components/Navbar/ResultIngredient";
 const result = () => {
   return (
     <div className="app__box">
       <div className="design_box1"></div>
       <div className="design_box2"></div>
-      <div className="app__result-heading">Recipe Name</div>
+      <div className="app__result-heading">milk Slaw with Pearl Onions</div>
+      <div className="app__result-ingredient_box">
+        <Resultingredient title=" 1/2 teaspoon salt" />
+        <Resultingredient title="1/2 cup diced green bell pepper" />
+        <Resultingredient title="1 cup plain yogurt" />
+        <Resultingredient title="1/4 cup chopped fresh cilantro" />
+        <Resultingredient title="1/2 cup diced green bell pepper" />
+        <Resultingredient title="1 cup diced sweet onion" />
+        <Resultingredient title="1 cup shredded cabbage" />
+        <Resultingredient title="1 cup diced green bell pepper " />
+        <Resultingredient title="1 tablespoon chopped fresh cilantro" />
+        <Resultingredient title="1 teaspoon ground cumin" />
+        <Resultingredient title="1/2 teaspoon ground black pepper" />
+        <Resultingredient title="milk" />
+        <Resultingredient title=" 1 cup diced sweet potatoes " />
+      </div>
       <div className="app__result-recipe">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur facere, optio illum obcaecati excepturi iusto sapiente a consectetur beatae, voluptatem possimus, quidem pariatur blanditiis? Quidem, quaerat. Tenetur voluptatibus totam quisquam repudiandae. A iure repudiandae fugiat, molestias, architecto possimus reprehenderit necessitatibus unde sed neque dignissimos non repellendus voluptatum facilis ratione magnam placeat inventore autem quos nulla! Iste totam corrupti animi autem possimus, sapiente illo incidunt. Cum quo ducimus a magni facere, unde amet eos laudantium nisi explicabo sunt ad, accusantium inventore neque eligendi asperiores, commodi quia. Asperiores iure quo laborum ipsa nisi provident repellendus aspernatur accusantium nam ex. Inventore, neque saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore inventore enim, sed fugit illum velit neque dolorem ea dolores sapiente excepturi quia quo autem esse odio quis commodi possimus minus in repellat. Nobis dicta recusandae, tenetur temporibus magnam, atque commodi aliquid debitis assumenda repellendus necessitatibus, minima minus provident. Reiciendis tempora libero exercitationem. Enim id obcaecati illum, quisquam distinctio molestiae repudiandae tempora aut molestias voluptatem quos voluptatum iste est optio dicta nobis neque laboriosam velit voluptatibus beatae earum eveniet praesentium. Dolorum, nisi. Magni aperiam vero recusandae itaque velit? Asperiores eligendi soluta facilis aliquam voluptatibus nam quod quibusdam obcaecati, rem sequi et optio quo expedita fuga voluptas totam officiis commodi provident. Possimus vel fugit molestiae quas tempore, voluptate repellat laborum sed porro ducimus accusantium perferendis alias minima reprehenderit pariatur nulla itaque ad neque explicabo tempora consequatur minus quae ipsa. Reiciendis unde, asperiores facilis dignissimos praesentium saepe sit eveniet totam nesciunt magnam explicabo dolore doloremque odit laboriosam architecto accusamus eligendi quidem et natus ex minima eius? Nulla laudantium quia laborum harum quidem nesciunt animi minus laboriosam, aliquid explicabo impedit rem necessitatibus suscipit rerum distinctio atque non vitae cumque facere eaque optio debitis iusto. Temporibus architecto cum nulla explicabo nobis fugit dolorem expedita, rerum provident doloremque distinctio et aspernatur consectetur similique amet inventore maxime. Deserunt asperiores harum ducimus maxime totam provident rem necessitatibus obcaecati, facilis quos, quod et tempora, suscipit minima dolore dolores enim! Doloremque aliquid labore quas vitae voluptatum velit adipisci repellat voluptatibus, natus minima ipsam! Similique, impedit reprehenderit. Dignissimos in asperiores, hic cum sit totam molestiae cupiditate veritatis architecto nulla blanditiis necessitatibus pariatur amet ducimus? Impedit enim, eveniet rerum asperiores iste omnis? Accusamus in dolore rem enim quod repellat voluptates exercitationem, maiores dicta vero molestiae doloremque porro rerum atque veniam nisi perspiciatis, cum, explicabo eveniet tenetur assumenda quas id? Aliquam tempore id natus aspernatur inventore quaerat ipsum earum expedita dicta nam, quod molestiae quibusdam veritatis! Quis, dolorem nam, nihil consectetur veniam consequuntur, est numquam quia quas necessitatibus commodi rerum adipisci ut omnis consequatur! Soluta rerum itaque inventore, magnam nulla placeat molestiae assumenda pariatur id distinctio illo quisquam ad dolore cupiditate at animi cum earum ipsum minima. Ex hic maxime facere explicabo, corrupti unde illum accusantium fuga quaerat, voluptates voluptatum quo quae totam libero quis? Esse omnis eum, recusandae voluptates quisquam illum earum eligendi ratione qui ipsam consequuntur accusamus fuga illo incidunt amet necessitatibus eaque assumenda placeat molestiae alias harum vero. Quis, ex dolorum eum ab sequi aspernatur quia libero numquam ut, repudiandae, velit odio modi! Quae id delectus adipisci fugiat alias in repudiandae eligendi suscipit incidunt! Quos ab similique repellat iusto maxime a omnis rerum, quae illum reiciendis magnam ratione mollitia blanditiis cupiditate modi provident itaque neque voluptatibus earum consequatur asperiores recusandae doloribus deleniti. Labore ab quos perferendis voluptatibus culpa ex dicta expedita mollitia cum nihil officia ea earum deserunt similique impedit pariatur iste, iusto libero sit! Dignissimos hic officia eius voluptas, ullam earum excepturi inventore mollitia accusamus, reprehenderit ex neque quae maxime illum impedit! Iusto nisi id modi veniam doloremque rem.
+        ▪ Place cauliflower in a bowl and cover with several inches of cool
+        water; let soak until tender, about 1 hour. Drain and rinse beans.,
+        <br />▪ Combine cauliflower, corn, onion, and garlic in a large bowl.
+        Stir in coconut milk, cilantro, and garlic. Seas son with salt and
+        pepper., <br />▪ Cover bowl with plastic wrap and refrigerate until
+        flavors combine, about 30 minutes., <br />▪ Preheat oven to 3 350
+        degrees F (175 degrees C). Grease a 9x13-inch baking dish.,
+        <br /> ▪ Place cauliflower in the baking dish. Sprinkle salt and pepper
+        on top.,, ▪ Bake in the preheated oven until tender, about 45 minutes.
+        Cool for 10 minutes before serving.
       </div>
       <div className="design_box3"></div>
       <div className="design_box4"></div>

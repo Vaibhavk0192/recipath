@@ -18,7 +18,7 @@ const Navbar = () => {
             <Link to="/aboutus">ABOUT</Link>
           </li>
           <li>
-            <Link to="/Subscribe">SUBSCRIBE</Link>
+            <Link to="/subscribe">SUBSCRIBE</Link>
           </li>
         </ul>
         <div className="app__navbar-button">

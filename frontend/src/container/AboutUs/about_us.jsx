@@ -24,10 +24,10 @@ const about_us = () => {
             ipsam iusto doloremque repellendus ducimus ipsa! Blanditiis sequi
             nulla itaque reprehenderit! Dolore in rem expedita minima?
           </div>
-        </div>
 
         <div className="design_box3"></div>
         <div className="design_box4"></div>
+        </div>
 
     </div>
   );

@@ -1,4 +1,5 @@
 .app__result-heading {
+    text-transform: capitalize;
     align-items: center;
     justify-content: center;
     padding: 5rem 0rem 0rem 5rem;
@@ -8,16 +9,22 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+.app__result-ingredient_box {
+    display: flex;
+    padding: 4rem 0rem 0rem 5rem;
+    position: relative;
+    flex-wrap: wrap;
+}
+
 .app__result-recipe{
-    font-size: 14px;
+    margin-top: 2rem;
+    display: block;
+    font-size: 18px;
     color: aliceblue;
     text-decoration: none;
     padding:2rem 3rem 4rem 3rem;
     margin-left: 2rem;
     display: flex;
-    /* justify-content: flex-start; */
-    /* align-items: flex-start; */
-    border-radius: 10px;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
 }
