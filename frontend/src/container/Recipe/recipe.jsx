@@ -4,11 +4,18 @@ import "./recipe.css";
 import Ingredient from "../../components/Navbar/ingredient";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import result from "../RecipeInfo/result";
+import Result from "../RecipeInfo/result";
+import LoadingSpinner from "../../components/Navbar/spinner";
 
 const Recipe = () => {
   const [ingredientItem, setIngredientItem] = React.useState("");
   const [ingredients, setIngredients] = React.useState([]);
+
+  const [showResult, changeResult] = React.useState(false);
+  const [generatedRecipe, setRecipe] = React.useState({});
+  const [showForm, setShowForm] = React.useState(true);
+
+  const [isLoading, setLoading] = React.useState(false);
 
   const removeIngredient = (id) => {
     setIngredients((prevIngredients) => {
@@ -30,6 +37,7 @@ const Recipe = () => {
       progress: undefined,
       theme: "light",
     });
+    setLoading(true);
     axios
       .post("http://localhost:4000/api/recipe", {
         ingredients: ingredients,
@@ -38,7 +46,10 @@ const Recipe = () => {
         setTimeout(() => {
           setIngredients([]);
         }, 1500);
-        console.log(response.data);
+        setLoading(false);
+        setRecipe(response.data);
+        changeResult(true);
+        setShowForm(false);
       })
       .catch((err) => {
         toast.error("Please try again later!", {
@@ -51,69 +62,87 @@ const Recipe = () => {
           progress: undefined,
           theme: "light",
         });
+        setLoading(false);
         console.log(err);
       });
   };
 
   return (
     <div>
-      <div className="app__box">
-      <div className="design_box1"></div>
-      <div className="design_box2"></div>
-        <h1 className="app__recipe-heading">Recipath</h1>
-        <div className="app__recipe-ingredients">
-          <ul style={{ display: "flex" }}>
-            {ingredients.map((ingredient, index) => {
-              return (
-                <Ingredient
-                  title={ingredient}
-                  click={removeIngredient}
-                  key={index}
-                  id={index}
-                />
-              );
-            })}
-          </ul>
-        </div>
-        <div className="app__recipe-input">
-          <div className="app__recipe-inputbox">
-            <ion-icon name="mail-outline"></ion-icon>
-            <input
-              type="Name"
-              required
-              value={ingredientItem}
-              onChange={(event) => setIngredientItem(event.target.value)}
-            ></input>{" "}
-            <label>Enter recipe keyword*</label>
-            <div className="app__recipe-adddiv">
-              <button
-                className="app__recipe-add"
-                onClick={() => {
-                  setIngredients([...ingredients, ingredientItem]);
-                  setIngredientItem("");
-                }}
-              >
-                ADD
-              </button>
+      {isLoading && <LoadingSpinner />}
+      {showForm && (
+        <div className="app__box">
+          <div className="design_box1"></div>
+          <div className="design_box2"></div>
+          <h1 className="app__recipe-heading">Recipath</h1>
+          <div className="app__recipe-ingredients">
+            <ul style={{ display: "flex" }}>
+              {ingredients.map((ingredient, index) => {
+                return (
+                  <Ingredient
+                    title={ingredient}
+                    click={removeIngredient}
+                    key={index}
+                    id={index}
+                  />
+                );
+              })}
+            </ul>
+          </div>
+          <div className="app__recipe-input">
+            <div className="app__recipe-inputbox">
+              <ion-icon name="mail-outline"></ion-icon>
+              <input
+                type="Name"
+                required
+                value={ingredientItem}
+                onChange={(event) => setIngredientItem(event.target.value)}
+              ></input>{" "}
+              <label>Enter recipe keyword*</label>
+              <div className="app__recipe-adddiv">
+                <button
+                  className="app__recipe-add"
+                  onClick={() => {
+                    setIngredients([...ingredients, ingredientItem]);
+                    setIngredientItem("");
+                  }}
+                  disabled={isLoading}
+                >
+                  ADD
+                </button>
+              </div>
             </div>
           </div>
+          <div className="btn-boundary">
+            <form onSubmit={handleSubmit}>
+              <button
+                className="btn-Generate"
+                type="submit"
+                disabled={isLoading}
+              >
+                Generate
+              </button>
+            </form>
+          </div>
+          <div className="app__recipe-note">
+            *Please include recipe ingredient(s) or title in keywords for
+            accurate search results.
+            <br />
+            **Recipe generated by our platform should be used at your own risk.
+            We cannot guarantee the accuracy or effectiveness of each recipe.
+          </div>
+          <div className="design_box3"></div>
+          <div className="design_box4"></div>
         </div>
-        <div className="btn-boundary">
-          <form onSubmit={handleSubmit}>
-            <button className="btn-Generate" type="submit">
-              Generate
-            </button>
-          </form>
-        </div>
-        <div className="app__recipe-note">
-          *Please include recipe ingredient(s) or title in keywords for accurate search results.<br />
-          **Recipe generated by our platform should be used at your own risk. We cannot guarantee the accuracy or effectiveness of each recipe.
-
-        </div>
-        <div className="design_box3"></div>
-        <div className="design_box4"></div>
-        <ToastContainer />
-      </div>
+      )}
+      {showResult && (
+        <Result
+          RecipeTitle={generatedRecipe.RecipeTitle}
+          Ingredients={generatedRecipe.Ingredients}
+          Steps={generatedRecipe.Steps}
+        />
+      )}
+      <ToastContainer />
     </div>
   );
 };

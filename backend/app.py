@@ -29,18 +29,18 @@ def load_dataset(silent=False):
             dataset += json_data_list
 
             # This code block outputs the summary for each dataset.
-            if silent == False:
-                print(dataset_file_path)
-                print('===========================================')
-                print('Number of examples: ', len(json_data_list), '\n')
-                print('Example object keys:\n', dict_keys, '\n')
-                print('Example object:\n', json_data_list[0], '\n')
-                print('Required keys:\n')
-                print('  title: ', json_data_list[0]['title'], '\n')
-                print('  ingredients: ',
-                      json_data_list[0]['ingredients'], '\n')
-                print('  instructions: ', json_data_list[0]['instructions'])
-                print('\n\n')
+            # if silent == False:
+            #     print(dataset_file_path)
+            #     print('===========================================')
+            #     print('Number of examples: ', len(json_data_list), '\n')
+            #     print('Example object keys:\n', dict_keys, '\n')
+            #     print('Example object:\n', json_data_list[0], '\n')
+            #     print('Required keys:\n')
+            #     print('  title: ', json_data_list[0]['title'], '\n')
+            #     print('  ingredients: ',
+            #           json_data_list[0]['ingredients'], '\n')
+            #     print('  instructions: ', json_data_list[0]['instructions'])
+            #     print('\n\n')
 
     return dataset
 
@@ -143,7 +143,7 @@ model_path = os.path.join(
     os.getcwd(), filepath_of_trained_model).replace("\\", "/")
 model_simplified.load_weights(model_path)
 model_simplified.build(tf.TensorShape([simplified_batch_size, None]))
-model_simplified.summary()
+# model_simplified.summary()
 tokenizer = tf.keras.preprocessing.text.Tokenizer(
     char_level=True,
     filters='',
@@ -201,23 +201,9 @@ image_select = True
 
 
 def generate_combinations(model, ingredients_list):
-    image_urls = ['https://i.ndtvimg.com/i/2017-06/spicy-dishes_620x350_41498029900.jpg',
-                  'https://cookthestory.com/wp-content/uploads/2019/12/Italian-Chicken-Breast-1392x780-4095.jpg',
-                  'https://i.pinimg.com/originals/d8/b7/fe/d8b7fef1785f83140567d8d5febf2e56.jpg',
-                  'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=960,872',
-                  'https://www.swantour.com/blogs/wp-content/uploads/2019/04/Famous-Food-of-Shimla.jpg',
-                  'https://i.ndtvimg.com/i/2016-04/bell-pepper-cover_625x350_71460619334.jpg',
-                  'https://www.archanaskitchen.com/images/archanaskitchen/Indian_Vegetables_Gravy/Kadai_Baby_Corn_Capsicum_Masala_Recipe-6.jpg',
-                  'https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                  'https://images2.alphacoders.com/100/1003810.jpg',
-                  'https://www.itl.cat/pngfile/big/290-2906144_food-wallpaper-hd-restaurants-food-images-hd.jpg',
-                  'https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                  'https://thumbs.dreamstime.com/b/indian-food-thali-style-meal-chicken-meat-masala-tea-chai-wooden-table-138439693.jpg']
     recipe_length = 4000
     try_letters = ingredients_list
     try_temperature = [0.2, 0.9]
-
-    print("Inside function")
 
     ans = dict()
     ans[0] = []
