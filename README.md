@@ -52,22 +52,22 @@ If you would like to contribute to Recipath, please follow these steps:
 ## Website Screenshots
 
 - Home Page
-  ![Home page](https://raw.githubusercontent.com/Vaibhavk0192/recipath/master/Website%20screenshots/Homepage.png?token=GHSAT0AAAAAACBBDRZXKYJUOB6RYVO6DWBAZB4DHDA)
+  ![Home page](https://github.com/Vaibhavk0192/recipath/blob/master/Website%20screenshots/Homepage.png?raw=true)
 
 - Login
-  ![Login](https://raw.githubusercontent.com/Vaibhavk0192/recipath/master/Website%20screenshots/Login.png?token=GHSAT0AAAAAACBBDRZXFIKC5CWBBJRPXO24ZB4DIFQ)
+  ![Login](https://github.com/Vaibhavk0192/recipath/blob/master/Website%20screenshots/Login.png?raw=true)
 
 - Register
-  ![Register](https://raw.githubusercontent.com/Vaibhavk0192/recipath/master/Website%20screenshots/Register.png?token=GHSAT0AAAAAACBBDRZX6ZISL2NU4FFZRPT2ZB4DJMQ)
+  ![Register](https://github.com/Vaibhavk0192/recipath/blob/master/Website%20screenshots/Register.png?raw=true)
 
 - Subscribe
-  ![Subscribe](https://raw.githubusercontent.com/Vaibhavk0192/recipath/master/Website%20screenshots/Newsletter.png?token=GHSAT0AAAAAACBBDRZXIGJPWVGV7ZW2R5K4ZB4DJQA)
+  ![Subscribe](https://github.com/Vaibhavk0192/recipath/blob/master/Website%20screenshots/Newsletter.png?raw=true)
 
 - Enter Keywords
-  ![Enter input](https://raw.githubusercontent.com/Vaibhavk0192/recipath/master/Website%20screenshots/Generate%20Recipe.png?token=GHSAT0AAAAAACBBDRZWS24SKNDIXHLQYNNSZB4DJSQ)
+  ![Enter input](https://github.com/Vaibhavk0192/recipath/blob/master/Website%20screenshots/Generate%20Recipe.png?raw=true)
 
 - Result
-  ![Result](https://raw.githubusercontent.com/Vaibhavk0192/recipath/master/Website%20screenshots/Result.png?token=GHSAT0AAAAAACBBDRZWICT7TO3YMQXVVHIYZB4DJVQ)
+  ![Result](https://github.com/Vaibhavk0192/recipath/blob/master/Website%20screenshots/Result.png?raw=true)
 
 ## Contributors
 
