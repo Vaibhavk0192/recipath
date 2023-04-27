@@ -1,29 +1,89 @@
-
-
 .app__about-headtext {
    align-items: center;
    justify-content: center;
-   padding: 8rem 0rem 0rem 4rem;
+   padding: 2rem 0rem 0rem 4rem;
    color: #F2CFA5;
-   font-weight: bold;
-   font-size: 45px;
+   font-weight: bolder;
+   font-size: 50px;
    font-family: 'Ubuntu', sans-serif;
-
+   display: flex;
+   margin-bottom: 10px;
 }
 
 .app__about-content {
    font-size: 15px;
    color: aliceblue;
    text-decoration: none;
-   padding: 2rem 2rem;
-   margin-left: 2rem;
-   display: flex;
-   /* justify-content: flex-start; */
-   /* align-items: flex-start; */
+   padding:0rem 5rem;
    border-radius: 10px;
    font-family: 'Ubuntu', sans-serif;
    font-weight: bold;
-   padding-left: 2rem;
-   padding-bottom: 18rem;
+   display: flex;
+}
 
+.app__about-profile-box {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 5rem;
+   width: 100%;
+}
+
+.app__about-image img {
+   height: 25rem;
+   width: 90%;
+   border-radius:5px;
+   
+}
+.image-heading{
+   margin-top: 1.5rem;
+   color: #F2CFA5;
+   font-weight: bold;
+   font-size: 22px;
+   font-family: 'Ubuntu', sans-serif;
+   display: flex;
+   align-items:center;
+   justify-content: center;
+}
+
+.app__about-image{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
+   padding: 2rem;
+   border-radius: 2px;
+   width: 70%;
+}
+
+.image-text{
+   margin-top: 0.4rem;
+   color: rgb(224, 221, 221);
+   font-weight: bold;
+   font-size: 15px;
+   font-family: 'Ubuntu', sans-serif;
+   display: flex;
+   align-items:center;
+   justify-content: center;
+}
+
+.design_box31{
+   position: absolute;
+   background-color: #f2cfa5;
+   height: 15px;
+   width: 120px;
+   bottom:auto;
+   right: auto;
+   z-index: 5;
+}
+
+.design_box41{
+   display: flex;
+   position:absolute;
+   z-index: 10;
+   background-color: #f2cfa5;
+   height: 120px;
+   /* margin-top: 10rem; */
+   width: 15px;
+   /* margin-left: 5rem; */
 }
